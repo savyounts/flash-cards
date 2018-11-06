@@ -9,7 +9,7 @@ require 'minitest/pride'
 require 'pry'
 
 # and here's all the lib files you need access to
-require './lib/flash_cards'
+require './lib/card'
 require './lib/guess'
 require './lib/deck'
 require './lib/round'
