@@ -5,7 +5,6 @@ require_relative 'flash_cards'
 require_relative 'guess'
 require_relative 'deck'
 require_relative 'round'
-require 'pry'
 
 class FlashCardTest < Minitest::Test
 
@@ -19,7 +18,6 @@ end
 
 
 def test_card_has_a_question_and_an_answer
-
   assert_equal "This is a question", @card.question
   assert_equal "This is an answer", @card.answer
 end
