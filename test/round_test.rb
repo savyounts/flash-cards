@@ -1,6 +1,6 @@
 require './test/test_helper'
 
-class FlashCardTest < Minitest::Test
+class RoundTest < Minitest::Test
   # part of the confusion is "flash card test" doesn't tell exactly what it's testing.
   # you've got cards, decks, guesses, and rounds. Every test should fit logically
   # into one of those classes. 
