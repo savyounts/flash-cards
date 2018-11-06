@@ -2,7 +2,6 @@ require './test/test_helper'
 
 class CardTest < Minitest::Test
   def setup
-    # setup a new card here
     @card = Card.new("What's the first month of the year?", "January")
   end
   

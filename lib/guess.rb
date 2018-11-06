@@ -1,7 +1,5 @@
 class Guess
-
   attr_reader :response, :card
-
   def initialize(response, card)
     @response = response
     @card = card
@@ -14,7 +12,4 @@ class Guess
   def feedback
     self.response == self.card.answer ? "Correct!" : "Incorrect."
   end
-
-
-
 end

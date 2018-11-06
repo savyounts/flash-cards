@@ -1,6 +1,9 @@
 require './test/test_helper'
 
 class FlashCardTest < Minitest::Test
+  # part of the confusion is "flash card test" doesn't tell exactly what it's testing.
+  # you've got cards, decks, guesses, and rounds. Every test should fit logically
+  # into one of those classes. 
 
   def setup
      @card = Card.new("This is a question", "This is an answer")
@@ -12,23 +15,33 @@ class FlashCardTest < Minitest::Test
 
 
   def test_card_has_a_question_and_an_answer
+    skip
+    # this test should live in test/card_test.rb
     assert_equal "This is a question", @card.question
     assert_equal "This is an answer", @card.answer
   end
 
   def test_guess_belongs_to_card
+    skip
+    # this test should live in guess_test.rb (i've copied it over)
     assert_equal @card, @right_guess.card
   end
 
   def test_correct_is_response_correct
+    skip
+    # this test should live in guess_test.rb (i've copied it over)
     assert @right_guess.correct?
   end
 
   def test_feedback_returns_correct
+    skip
+    # this test should live in guess_test.rb (i've copied it over)
     assert_equal @right_guess.feedback, "Correct!"
   end
 
   def test_feedback_returns_correct
+    skip
+    # this test should live in guess_test.rb (i've copied it over)
     assert_equal @wrong_guess.feedback, "Incorrect."
   end
 
