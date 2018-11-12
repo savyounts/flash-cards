@@ -11,7 +11,12 @@ class Guess
   end
 
   def feedback
-    self.response == self.card.answer ? "Correct!" : "Incorrect."
+    # this could call the #correct? method, and then have the ternery, like:
+    # correct? ? "Correct!" : "Incorrect."
+    # self.response == self.card.answer ? "Correct!" : "Incorrect."
+    # or:
+    return "Correct!" if correct?
+    "Incorrect."
   end
 
 
