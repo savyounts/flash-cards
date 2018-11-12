@@ -18,17 +18,21 @@ class Round
   end
 
   def number_correct
-    correct_counter = 0
-    @guesses.each do |guess|
-      correct_counter += 1 if guess.correct?
+    # correct_counter = 0
+    # @guesses.each do |guess|
+    #   correct_counter += 1 if guess.correct?
+    # end
+    # return correct_counter
+    # when counting items, inject/reduce is a good way to go. 
+    # what you had is fine. Here's a slightly more idiomatic
+    # way to do it:
+    @guesses.reduce(0) do |sum, guess|
+      sum += 1 if guess.correct?
+      sum
     end
-    return correct_counter
   end
 
-def percent_correct
-  (self.number_correct.to_f / @guesses.count) * 100
-end
-
-
-
+  def percent_correct
+    (self.number_correct.to_f / @guesses.count) * 100
+  end
 end
