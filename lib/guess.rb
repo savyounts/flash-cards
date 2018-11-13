@@ -7,11 +7,11 @@ class Guess
   end
 
   def correct?
-    self.response == self.card.answer
+    self.response.downcase == self.card.answer.downcase
   end
 
   def feedback
-    self.response == self.card.answer ? "Correct!" : "Incorrect."
+    self.correct? ? "Correct!" : "Incorrect."
   end
 
 

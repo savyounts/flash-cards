@@ -1,7 +1,7 @@
 require 'pry'
 class Round
   attr_reader :deck, :guesses
-  
+
   def initialize(deck)
     @deck = deck
     @guesses = []
@@ -14,20 +14,33 @@ class Round
 
   def record_guess(guess)
     new_guess = Guess.new(guess, self.current_card)
+    puts new_guess.feedback
     @guesses << new_guess
   end
 
   def number_correct
-    correct_counter = 0
+    counter = 0
     @guesses.each do |guess|
-      correct_counter += 1 if guess.correct?
+      counter += 1 if guess.correct?
     end
-    return correct_counter
+    counter
   end
 
-def percent_correct
-  (self.number_correct.to_f / @guesses.count) * 100
-end
+  def percent_correct
+    (self.number_correct.to_f / @guesses.count) * 100
+  end
+
+  def start
+    count = self.deck.cards.count
+   puts "Welcome! You\'re playing with #{count} cards."
+   self.deck.cards.each_with_index do |card, index|
+     puts "This is card number #{index + 1} out of #{count}."
+     puts "Question: #{card.question}"
+     guess = self.record_guess(gets.chomp)
+   end
+   puts "******* Game over! *******"
+   puts "You had #{self.number_correct} correct guesses out of #{count} for a score of #{self.percent_correct}%"
+  end
 
 
 
