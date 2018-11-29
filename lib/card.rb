@@ -1,8 +1,9 @@
 class Card
-  attr_accessor :question, :answer
+  attr_accessor :question, :answer, :hint
 
-  def initialize(question, answer)
+  def initialize(question, answer, hint)
     @question = question
     @answer = answer
+    @hint = hint
   end
 end
