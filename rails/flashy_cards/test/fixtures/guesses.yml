@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  response: MyString
+  card_id: 1
+  round_id: 1
+
+two:
+  response: MyString
+  card_id: 1
+  round_id: 1
